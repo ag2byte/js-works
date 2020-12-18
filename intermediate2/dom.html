@@ -1,0 +1,33 @@
+<!-- to demo this we will use an html page -->
+<!-- DOM- Document Object Model. This is used to treat html elements as objects which can then be referenced in js  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 class="hello">Hello</h1>
+      <span id="text"> boi</span>
+    </div>
+  </body>
+  <script>
+    // we can use js directly here or define the js file differently and source it here
+    // we can access HTML elements as objects :
+    var h1tag = document.getElementsByTagName("h1"); // gets all h1 elements AS AN ARRAY, here only one is present
+    console.log(h1tag[0].innerText); //  access the 1st element inner text // Hello
+    var h1class = document.getElementsByClassName("hello"); // access as a class name, returns an array of elements with same class name
+    console.log(h1class[0].innerHTML); // notice here inner HTML is same as INNER text
+    console.log(document.getElementsByTagName("div")[0].innerHTML);
+    /*
+
+      <h1 class="hello">Hello</h1>
+      <span id="text"> boi</span>
+    */
+    var spanid = document.getElementById("text"); // since ids are unique, it returns a single object
+    console.log(spanid.innerText); //boi
+    // there are other ways to access an element. more on: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+  </script>
+</html>
