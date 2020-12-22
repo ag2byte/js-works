@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="green">💚</button>
+      <button id="blue">💙</button>
+    </div>
+    <style>
+      div {
+        margin-top: 25vh;
+        margin-left: 45vw;
+      }
+      button {
+        width: 80px;
+        background-color: rgb(0, 0, 0);
+        border: none;
+        font-size: 40px;
+        height: 80px;
+      }
+    </style>
+    <script>
+      // -------------------------------------------
+      // COMPUTED STYLE
+      // -------------------------------------------
+      var btns = document.getElementsByTagName("button");
+      console.log(window.getComputedStyle(btns[0])); // returns a CSSStyleDeclaration object
+      console.log(window.getComputedStyle(btns[0]).backgroundColor); // returns rgb(0,0,0) => black
+      // a common thing to notice here is that the - in CSS is removed and the very next letter is capitalized
+      // eg: background-color in CSS becomes backgroundColor in js
+
+      // more on this object : https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+
+      //--------------------------------------------
+      // EVENT LISTENERS
+      //--------------------------------------------
+
+      // events are the things that cause a change in the state of a website, eg, click, scroll etc
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener(
+          "click", // this event is called when either of button is clicked as per state
+
+          () => {
+            var element = btns[i];
+            if (
+              window.getComputedStyle(element).backgroundColor == "rgb(0, 0, 0)" // if black change to purple else reverse
+            )
+              element.style.backgroundColor = "#9f00ad";
+            else element.style.backgroundColor = "black";
+          }
+        );
+      }
+      // there are many more events more on: https://developer.mozilla.org/en-US/docs/Web/Events
+    </script>
+  </body>
+</html>
