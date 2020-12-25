@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ul class="lists"></ul>
+    </div>
+  </body>
+  <script>
+    const lists = [
+      {
+        title: "Science",
+        duration: 3,
+      },
+      {
+        title: "Math",
+        duration: 4,
+      },
+
+      {
+        title: "Games",
+        duration: 6,
+      },
+    ];
+    //we are trying to insert these objects in the list class in the DOM
+    var ul = document.querySelector(".lists");
+    ul.innerHTML = ""; // clear if there is something already
+    function makeList() {
+      lists.forEach((list) => {
+        const li = document.createElement("li"); // creates a li element 👉🏻 <li></li>
+        li.classList.add("list-item"); // adding class name list-item to li
+        // so far we have made this: <li class = 'list-item'></li>
+        // now we need to add data inside 👉🏻 we need to add textNode
+        const data1 = document.createTextNode(list.title);
+        const data2 = document.createTextNode(list.duration);
+        li.appendChild(data1);
+        li.appendChild(data2);
+        ul.appendChild(li); // this adds a li element as a child to ul
+      });
+    }
+    // you can probably imagine this neing used with the data sent from the backend or the database
+
+    window.addEventListener("load", makeList); // makeList() when the page is loaded
+  </script>
+</html>
+<!-- more info: https://developer.mozilla.org/en-US/docs/Web/API/Document  -->
