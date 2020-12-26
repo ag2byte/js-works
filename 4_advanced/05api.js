@@ -3,7 +3,7 @@
 
 // you can try any api for this purpose
 
-// I am using io.tronalddump.api
+// I am using cat-facts
 // JS by default uses fetch() to handle apis, and it is promised based, so we can have a lot of 'then' cases for +ve response
 
 /*
