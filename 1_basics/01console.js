@@ -43,3 +43,6 @@ console.log(Math.round(num * num3)); //15
 
 // there are a lot of  math functions that can be used to calculate mathematical expressions. More info at  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
 // there is also operator precedence which is the same . More info at : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+//console is not limited to log, there are many more functions like table(), trace()
+// more info on these at https://developer.mozilla.org/en-US/docs/Web/API/console
